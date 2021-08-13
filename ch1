@@ -1,0 +1,49 @@
+# ch1.py - Getting Started with spaCy
+# Mastering spaCy
+
+"""Tips for the reader
+This book is a practical guide. In order to get the most out of the book,
+recommend readers replicate the code in their own Python shell.
+Without following and performing the code, it is not possible to get a
+proper understanding of NLP concepts and spaCy methods, which is why we
+have arranged the upcoming chapters in the following way:
+ - Explanation of the language/ML concept
+ - Application code with spaCy
+ - Evaluation of the outcome
+ - Challenges of the methodology
+ - Pro tips and tricks to overcome the challenges"""
+
+word = 'Hello World'
+
+print(word[0])
+word[4]
+len(word)
+
+for ch in word:
+    print(ch)
+
+word.count('l')
+word.index('e')
+word.find('World')
+word.find('Bonjour')
+word.rfind('l')
+word.upper()
+word.lower()
+'hello madam'.capitalize()
+'hello madam'.title()
+'Hello Madam!' + ' Have a nice day.'
+'sweet ' * 5
+' '.join(['hello', 'madam'])
+'hello madam'.replace('hello', 'good morning')
+
+word = 'Hello Madam Flower'
+word[6:11]
+word[:5]
+word[12:]
+
+
+import spacy
+nlp = spacy.load('en_core_web_md')
+doc = nlp('I have a nephew named Miles.')
+spacy.displacy.serve(doc, style='dep')
+spacy.displacy.serve(doc, style='ent', port='5001')
